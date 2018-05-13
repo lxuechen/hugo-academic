@@ -84,7 +84,25 @@
         </ul>
       </div>
       {{ end }}
-
+      
+      {{ with $page.Params.industry }}
+      <div class="col-sm-7">
+        <h3>{{ i18n "industry" | markdownify }}</h3>
+        <ul class="ul-edu fa-ul">
+          {{ range .companies }}
+          <li>
+            <i class="fas fa-industry"></i>
+            <div class="description">
+              <p class="timeline">{{ .position }}{{ with .year }}, {{ . }}{{ end }}</p>
+              <p class="institution">{{ .institution }}</p>
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+      
+      
     </div>
   </div>
 </div>
